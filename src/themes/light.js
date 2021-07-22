@@ -3,15 +3,23 @@ import fonts from "./fonts";
 import commonSettings from "./global.js";
 
 const lightTheme = {
-  color: "#222222",
+  color: "rgb(37, 52, 73)",
   gold: "#F8CC82",
   gray: "#A3A3A3",
   textHighlightColor: "#93AEBC", // "#F4D092",
+<<<<<<< HEAD
   backgroundColor: "#83A5CB11",
   // background:
   // "radial-gradient(circle at 25% 0%, rgba(227,255,240,.5), rgba(227,255,240,0) 50%), radial-gradient(circle at 80% 80%, rgba(131,165,203,.5), rgba(131,165,203,0) 50%)",
   background: "linear-gradient(180deg, #AFCDE9 0%, #F7FBE7 100%)",
   paperBg: "rgba(255, 255, 255, 0.5)",
+=======
+  backgroundColor: "#AFCDE9",
+  // background:
+  // "radial-gradient(circle at 25% 0%, rgba(227,255,240,.5), rgba(227,255,240,0) 50%), radial-gradient(circle at 80% 80%, rgba(131,165,203,.5), rgba(131,165,203,0) 50%)",
+  background: "linear-gradient(180deg, #AFCDE9 1%, #F7FBE7 100%)",
+  paperBg: "rgba(255, 255, 255, 0.6)",
+>>>>>>> develop
   modalBg: "#F9F9F9EE",
   popoverrBg: "rgba(255, 255, 255, 0.8)",
   menuBg: "rgba(255, 255, 255, 0.5)",
@@ -75,6 +83,10 @@ export const light = responsiveFontSizes(
         },
         MuiPaper: {
           root: {
+            backgroundColor: lightTheme.paperBg,
+            "&.ohm-card": {
+              backgroundColor: lightTheme.paperBg,
+            },
             "&.ohm-modal": {
               backgroundColor: lightTheme.modalBg,
             },
@@ -96,7 +108,11 @@ export const light = responsiveFontSizes(
         },
         MuiDrawer: {
           paper: {
+<<<<<<< HEAD
             backgroundColor: "#FFFFFF33",
+=======
+            backgroundColor: lightTheme.paperBg,
+>>>>>>> develop
           },
         },
         MuiLink: {
@@ -112,6 +128,17 @@ export const light = responsiveFontSizes(
             "&.active": {
               color: lightTheme.color,
               textDecoration: "underline",
+            },
+            "@media (hover:none)": {
+              "&:hover": {
+                color: lightTheme.textHighlightColor,
+                textDecoration: "none",
+                backgroundColor: "#00000000 !important",
+              },
+              "&:focus": {
+                color: lightTheme.textHighlightColor,
+                backgroundColor: "#00000000 !important",
+              },
             },
           },
         },
@@ -171,6 +198,14 @@ export const light = responsiveFontSizes(
               color: lightTheme.gold,
               backgroundColor: lightTheme.primaryButtonHoverBG,
               borderColor: lightTheme.primaryButtonBG,
+            },
+            "@media (hover:none)": {
+              color: lightTheme.primaryButtonBG,
+              borderColor: lightTheme.primaryButtonBG,
+              "&:hover": {
+                color: `${lightTheme.gold} !important`,
+                backgroundColor: `${lightTheme.primaryButtonBG} !important`,
+              },
             },
           },
           outlinedSecondary: {
