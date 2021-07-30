@@ -58,6 +58,10 @@ function Bond({ bond, address, provider }) {
     setView(newView);
   };
 
+  let bondToken = "DAI";
+  if (bond.indexOf("frax") >= 0) bondToken = "FRAX";
+  else if (bond.indexOf("eth") >= 0) bondToken = "ETH";
+
   return (
     <Grid container id="bond-view">
       <Backdrop open={true}>
@@ -76,7 +80,7 @@ function Bond({ bond, address, provider }) {
                 Bond Price
               </Typography>
               <Typography variant="h3" className="price" color="primary">
-                {trim(bondPrice, 2)} {bond.indexOf("frax") >= 0 ? "FRAX" : "DAI"}
+                {trim(bondPrice, 2)} {bondToken}
               </Typography>
             </div>
             <div className="bond-price-data">
@@ -84,7 +88,7 @@ function Bond({ bond, address, provider }) {
                 Market Price
               </Typography>
               <Typography variant="h3" color="primary" className="price">
-                {trim(marketPrice, 2)} {bond.indexOf("frax") >= 0 ? "FRAX" : "DAI"}
+                {trim(marketPrice, 2)} {bondToken}
               </Typography>
             </div>
           </Box>
